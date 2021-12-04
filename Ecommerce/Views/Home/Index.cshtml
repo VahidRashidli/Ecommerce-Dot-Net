@@ -1,0 +1,32 @@
+﻿@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center mx-4">Index Page</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Product</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ foreach (Order order in Model.Orders)
+            {
+                <tr>
+                    <th scope="row">#</th>
+                    <td>@order.User.Name</td>
+                    <td>@order.Product.Name</td>
+
+                </tr>
+            }
+
+        }
+
+
+    </tbody>
+</table>
+
